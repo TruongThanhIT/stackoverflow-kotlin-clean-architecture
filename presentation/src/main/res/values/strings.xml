@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Stack Over Flow</string>
+    <string name="all">All users</string>
+    <string name="book_marked">Book marked users</string>
+    <string name="alert_book_marked">Added to bookmarks</string>
+    <string name="alert_remove_book_marked">Removed from bookmarks</string>
+    <string name="reputation_history_title">User Reputation Histories</string>
+</resources>

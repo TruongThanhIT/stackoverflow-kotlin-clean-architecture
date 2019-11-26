@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_radius"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_large">
+
+    <TextView
+        android:id="@+id/tv_reputation_changed"
+        style="@style/TextBlack16"
+        tools:text="Change: 0" />
+
+    <TextView
+        android:id="@+id/tv_creation_date"
+        style="@style/TextBlack16"
+        android:layout_marginTop="@dimen/margin_tiny"
+        tools:text="Created At: 22/11/2019 12:23" />
+
+    <TextView
+        android:id="@+id/tv_reputation_type"
+        style="@style/TextBlack16"
+        android:layout_marginTop="@dimen/margin_tiny"
+        tools:text="Reputation Type: post_upvoted" />
+
+    <TextView
+        android:id="@+id/tv_post_id"
+        style="@style/TextBlack16"
+        android:layout_marginTop="@dimen/margin_tiny"
+        tools:text="Post ID: 3567" />
+</LinearLayout>

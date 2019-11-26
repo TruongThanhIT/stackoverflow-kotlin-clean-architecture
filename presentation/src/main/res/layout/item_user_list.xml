@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/PaddingSection"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white">
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/avatar_height"
+        android:layout_height="@dimen/avatar_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_user" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/TextBlack16"
+        android:layout_marginStart="@dimen/margin_large"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/tv_reputation"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="wrap"
+        tools:text="Thanh Truong" />
+
+    <TextView
+        android:id="@+id/tv_reputation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:background="@drawable/bg_item_reputation"
+        android:includeFontPadding="false"
+        android:paddingStart="@dimen/dp_6"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="@dimen/dp_6"
+        app:layout_constraintEnd_toStartOf="@+id/iv_book_mark"
+        android:paddingBottom="@dimen/margin_small"
+        android:textColor="@color/green"
+        android:textSize="@dimen/txt_tiny"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="10000 Reputation" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        style="@style/TextBlack12O50"
+        android:layout_width="0dp"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_toEndOf="@+id/iv_avatar"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:gravity="center_vertical"
+        android:drawableStart="@drawable/ic_place_black_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:text="Viet Nam" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        style="@style/TextBlack12O50"
+        android:layout_below="@+id/tv_location"
+        android:layout_marginTop="@dimen/margin_tiny"
+        android:layout_toEndOf="@+id/iv_avatar"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location"
+        tools:text="Last seen 3 mins ago" />
+
+    <ImageView
+        android:id="@+id/iv_book_mark"
+        android:layout_width="@dimen/icon_action_size"
+        android:layout_height="@dimen/icon_action_size"
+        android:padding="@dimen/margin_small"
+        android:paddingEnd="0dp"
+        android:src="@drawable/bg_book_mark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

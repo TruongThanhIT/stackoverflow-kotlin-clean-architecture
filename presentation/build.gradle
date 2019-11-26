@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+
+        applicationId globalConfiguration["androidApplicationId"]
+        versionCode globalConfiguration["androidVersionCode"]
+        versionName globalConfiguration["androidVersionName"]
+        testInstrumentationRunner globalConfiguration["testInstrumentationRunner"]
+        testApplicationId globalConfiguration["testApplicationId"]
+    }
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    kapt {
+        generateStubs = true
+        mapDiagnosticLocations = true
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    def presentationDependencies = rootProject.ext.presentationDependencies
+
+    implementation project(':domain')
+    implementation project(':data')
+
+    kapt presentationDependencies.daggerCompiler
+    implementation presentationDependencies.dagger
+    implementation presentationDependencies.appCompat
+    implementation presentationDependencies.recyclerView
+    implementation presentationDependencies.rxJava
+    implementation presentationDependencies.rxAndroid
+    implementation presentationDependencies.constraintLayout
+    implementation presentationDependencies.kotlin
+    implementation presentationDependencies.glide
+
+    //Development
+    implementation developmentDependencies.leakCanary
+}

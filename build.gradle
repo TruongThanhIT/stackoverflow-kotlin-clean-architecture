@@ -1,0 +1,31 @@
+apply from: 'buildsystem/dependencies.gradle'
+
+buildscript {
+    ext.kotlin_version = '1.3.50'
+    ext.build_gradle_version = '3.5.2'
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$build_gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    ext {
+        androidApplicationId = 'com.thanht.stackoverflow'
+        androidVersionCode = 1
+        androidVersionName = "1.0"
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        testApplicationId = 'com.fernandocejas.android10.sample.com.thanht.stackoverflow.presentation.test'
+    }
+
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
